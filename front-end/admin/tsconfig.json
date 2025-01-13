@@ -22,7 +22,21 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "typeRoots": ["./node_modules/@types", "./src"],
+    // Strictness flags. Matching the settings applied in the Angular Components source
+    // code, ensuring that examples do not break in StackBlitz with stricter settings.
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "useDefineForClassFields": false,
+    "strictNullChecks": true,
+
+    "strictFunctionTypes": true,
+
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

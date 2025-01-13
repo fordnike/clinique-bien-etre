@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "cli",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -32,7 +32,10 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "src/styles.scss",
+              "./node_modules/@toast-ui/calendar/dist/toastui-calendar.css",
+              "./node_modules/flexboxgrid/css/flexboxgrid.min.css",
             ],
             "scripts": []
           },
