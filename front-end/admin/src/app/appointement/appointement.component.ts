@@ -10,7 +10,10 @@ import {JsonPipe, NgStyle} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {MatRadioButton} from '@angular/material/radio';
 import {MatCheckbox} from '@angular/material/checkbox';
-
+import {MatMenu, MatMenuTrigger} from '@angular/material/menu';
+import {MatIconButton} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+/** ref https://nhn.github.io/tui.calendar/latest/tutorial-00-calendar-app*/
 const chance = new Chance();
 @Component({
   selector: 'cli-appointement',
@@ -24,7 +27,11 @@ const chance = new Chance();
     FormsModule,
     MatRadioButton,
     MatCheckbox,
-    NgStyle
+    NgStyle,
+    MatMenuTrigger,
+    MatMenu,
+    MatIconModule,
+    MatIconButton
   ],
   templateUrl: './appointement.component.html',
   styleUrl: './appointement.component.scss'
@@ -32,7 +39,7 @@ const chance = new Chance();
 export class AppointementComponent implements OnInit {
   cal: Calendar
   view=[{id:1,name:"day"},{id:2,name:"week"},{id:3,name:"month"}]
-  typeSelect= {id:1,name:"day"};
+
   calendars=MOCK_CALENDARS
   optionsSelect = {
     type: {id:1,name:"day"},

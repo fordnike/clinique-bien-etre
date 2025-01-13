@@ -35,7 +35,7 @@
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.scss",
               "./node_modules/@toast-ui/calendar/dist/toastui-calendar.css",
-              "./node_modules/flexboxgrid/css/flexboxgrid.min.css",
+              "./node_modules/flexboxgrid/css/index.min.css",
             ],
             "scripts": []
           },

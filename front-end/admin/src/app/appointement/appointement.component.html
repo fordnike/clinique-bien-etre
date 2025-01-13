@@ -1,34 +1,46 @@
-<div class="row " style="margin: 20px" >
-  <div class="col-xs-2">
+<div style="margin: 10px">
 
-    <ul class="row">
-      @for (subtask of calendars; track subtask; let i = $index) {
-        <li  style="margin: 5px; border: 2px solid" [ngStyle]="{'borderColor':subtask.backgroundColor}"
-         class="col-xs box"
-        >
-          <mat-checkbox [checked]="subtask.completed" (change)="update($event.checked, i)">
-            {{subtask.name}}
-          </mat-checkbox>
-        </li>
-      }
-    </ul>
-  </div>
-  <div class="col-xs" style="margin: auto;">
-    <div  class="row center-xs col-xs">
-      <header class="col-xs-12">
-        <!--      {{view | json}}-->
-        <mat-form-field appearance="outline">
-          <mat-label>Type</mat-label>
-          <mat-select [(ngModel)]="optionsSelect.type" (ngModelChange)="changeCalendar()">
-            @for (lb of view; track lb) {
-              <mat-option [value]="lb">{{lb.name}}</mat-option>
-            }
-          </mat-select>
-        </mat-form-field>
-      </header>
-      <div class="col-xs-12" id="calendar" style="max-width: 80vw;height: 80vh"></div>
+  <div class="row " style="margin: 20px">
+    <div class="col-xs-2">
+      <h6>Mes agendas</h6>
+      <ul class="row">
+        @for (subtask of calendars; track subtask; let i = $index) {
+          <li style="margin: 5px; border: 2px solid" [ngStyle]="{'borderColor':subtask.backgroundColor}"
+              class="col-xs row between-xs"
+          >
+
+            <mat-checkbox [checked]="subtask.completed" (change)="update($event.checked, i)">
+              {{ subtask.name }}
+            </mat-checkbox>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </li>
+        }
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </ul>
+    </div>
+    <div class="col-xs" style="margin: auto;">
+      <div class="row center-xs col-xs">
+        <header class="col-xs-12">
+          <!--      {{view | json}}-->
+          <mat-form-field appearance="outline">
+            <mat-label>Type</mat-label>
+            <mat-select [(ngModel)]="optionsSelect.type" (ngModelChange)="changeCalendar()">
+              @for (lb of view; track lb) {
+                <mat-option [value]="lb">{{ lb.name }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </header>
+        <div class="col-xs-12" id="calendar" style="max-width: 80vw;height: 80vh"></div>
+      </div>
+
     </div>
 
   </div>
-
 </div>
+

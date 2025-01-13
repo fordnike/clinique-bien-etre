@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {TemplateAngComponent} from './template-ang/template-ang.component';
 import {AppointementComponent} from './appointement/appointement.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TemplateAngComponent, AppointementComponent],
+  imports: [RouterOutlet, TemplateAngComponent, AppointementComponent,MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
